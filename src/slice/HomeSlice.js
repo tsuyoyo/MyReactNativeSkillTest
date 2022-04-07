@@ -12,11 +12,11 @@ export const homeSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-      .addCase(getHome.pending, (state, action) => {
+      .addCase(getHome.pending, state => {
         state.isFetching = true;
         state.errorMessage = undefined;
       })
-      .addCase(getHome.rejected, (state, action) => {
+      .addCase(getHome.rejected, state => {
         state.isFetching = false;
         state.errorMessage = 'Failed to fetch home data';
       })
